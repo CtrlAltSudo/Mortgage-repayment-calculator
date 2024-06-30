@@ -1,0 +1,19 @@
+* {
+    box-sizing: border-box;
+}
+main {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+}
+#mainContainer {
+    width: 50rem;
+    display: flex;
+}
+#mortgageContainer, #resultsContainer {
+    width: 50%;
+}
+.topHeadButton {
+    display: flex;
+}
