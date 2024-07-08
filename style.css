@@ -25,6 +25,7 @@ main {
     width: 60rem;
     display: flex;
     background-color: var(--White);
+    border-radius: 1rem;
 }
 #mortgageContainer, #resultsContainer {
     width: 50%;
@@ -32,10 +33,13 @@ main {
 }
 #mortgageContainer {
     background-color: var(--White);
+    border-radius: 1rem;
+
 }
 #resultsContainer {
     background-color: var(--Slate900);
     border-radius: 0 1rem 1rem 5rem;
+    color: var(--Slate300);
 }
 .topHeadButton {
     display: flex;
@@ -50,10 +54,18 @@ h3 {
 }
 label {
     text-align: left;
+    font-size: 0.8rem;
+    margin: 0.3rem 0 0.65rem 0;
 }
 #inlineWrapInputs {
     display: flex;
-    justify-content: space-between;
+    gap: 1rem;
+}
+#inlineWrapInputs .inputWrap input {
+   width: 100%; 
+}
+#morAmount {
+    margin-bottom: 0.9rem;
 }
 .topHeadButton h1 {
     font-size: 1.2rem;
@@ -70,12 +82,24 @@ label {
     margin-top: 0;
      
 }
-#morAmount {
+input {
     padding: 0.5rem;
     border-radius: 0.1rem;
     border: 1px solid var(--Slate500);
 
 }
-#morAmount {
-
+#calButton {
+    border: none;
+    background-color: var(--Lime);
+    border-radius: 1rem;
+    padding: 0.5rem;
+    font-size: 0.8rem;
+    font-weight: 500;
+    width: auto;
+}
+#calButton img {
+    width: 1rem;
+    height: auto;
+    display: inline;
+    vertical-align:text-bottom;
 }
