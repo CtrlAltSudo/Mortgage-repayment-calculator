@@ -14,6 +14,21 @@
 --Slate900: hsl(202, 55%, 16%);
 }
 
+
+ #repay {
+    
+    width: 1.3em;
+    height: 1.3em;
+    background-color: white;
+    border-radius: 50%;
+    vertical-align: middle;
+    border: 1px solid #ddd;
+    appearance: none;
+    -webkit-appearance: none;
+    outline: none;
+    cursor: pointer;
+
+}
 main {
     display: flex;
     justify-content: center;
@@ -88,14 +103,17 @@ input {
     border: 1px solid var(--Slate500);
 
 }
+
 #calButton {
     border: none;
     background-color: var(--Lime);
-    border-radius: 1rem;
-    padding: 0.5rem;
-    font-size: 0.8rem;
+    border-radius: 2rem;
+    padding: 1rem 2rem 1rem 2rem;
+    margin-top: 1rem;
+    font-size: 1rem;
     font-weight: 500;
     width: auto;
+    cursor: pointer;
 }
 #calButton img {
     width: 1rem;
@@ -103,3 +121,38 @@ input {
     display: inline;
     vertical-align:text-bottom;
 }
+
+#resultsContainer {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+#resultsContainer img {
+    margin: auto auto 1rem auto;
+}
+#resultsContainer h1 {
+    margin: 0 auto 1rem;
+    color: var(--Slate100);
+    font-size: 1.2rem;
+    font-weight: 400;
+}
+#resultsContainer p {
+    font-size: 1rem;
+    text-align: center;
+}
+
+/* #morType #repay {
+    
+        width: 1.3em;
+        height: 1.3em;
+        background-color: white;
+        border-radius: 50%;
+        vertical-align: middle;
+        border: 1px solid #ddd;
+        appearance: none;
+        -webkit-appearance: none;
+        outline: none;
+        cursor: pointer;
+    
+}
+ */
