@@ -63,14 +63,27 @@ main {
 h3 {
     display: block;
 }
-.inputWrap {
+/* .inputWrap {
     display: flex;
     flex-direction: column;
+} */
+.inputContainer {
+    display: flex;
+    border: 1px solid var(--Slate300);
+
 }
-label {
+.intLabel {
+    background-color: var(--Slate300);
+}
+label, h2 {
     text-align: left;
-    font-size: 0.8rem;
+    font-size: 1rem;
     margin: 0.3rem 0 0.65rem 0;
+    font-weight: 500;
+    color: var(--Slate500);
+}
+#morType label {
+    border: 1px solid var(--Slate300);
 }
 #inlineWrapInputs {
     display: flex;
@@ -81,6 +94,7 @@ label {
 }
 #morAmount {
     margin-bottom: 0.9rem;
+    border: 1px solid var(--Slate700);
 }
 .topHeadButton h1 {
     font-size: 1.2rem;
@@ -99,27 +113,32 @@ label {
 }
 input {
     padding: 0.5rem;
-    border-radius: 0.1rem;
-    border: 1px solid var(--Slate500);
-
+    border: none;
+    outline: none;
+}
+.intLabel {
+    text-align: center;
 }
 
 #calButton {
+    display: flex;
+    gap: 0.5rem;
     border: none;
     background-color: var(--Lime);
     border-radius: 2rem;
     padding: 1rem 2rem 1rem 2rem;
     margin-top: 1rem;
     font-size: 1rem;
-    font-weight: 500;
+    font-weight: 700;
     width: auto;
     cursor: pointer;
 }
+button span {
+    align-self: flex-end;
+}
 #calButton img {
-    width: 1rem;
+    width: 1.5rem;
     height: auto;
-    display: inline;
-    vertical-align:text-bottom;
 }
 
 #resultsContainer {
@@ -141,18 +160,3 @@ input {
     text-align: center;
 }
 
-/* #morType #repay {
-    
-        width: 1.3em;
-        height: 1.3em;
-        background-color: white;
-        border-radius: 50%;
-        vertical-align: middle;
-        border: 1px solid #ddd;
-        appearance: none;
-        -webkit-appearance: none;
-        outline: none;
-        cursor: pointer;
-    
-}
- */
