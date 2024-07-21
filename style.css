@@ -70,10 +70,12 @@ h3 {
 .inputContainer {
     display: flex;
     border: 1px solid var(--Slate300);
+    border-radius: 0.5rem;
 
 }
 .intLabel {
     background-color: var(--Slate300);
+
 }
 label, h2 {
     text-align: left;
@@ -91,6 +93,9 @@ label, h2 {
 }
 #inlineWrapInputs .inputWrap input {
    width: 100%; 
+   margin: 0.5rem;
+   border: transparent;
+   outline: transparent;
 }
 #morAmount {
     margin-bottom: 0.9rem;
@@ -111,13 +116,9 @@ label, h2 {
     margin-top: 0;
      
 }
-input {
-    padding: 0.5rem;
-    border: none;
-    outline: none;
-}
 .intLabel {
-    text-align: center;
+    align-self: center;
+    border-radius: 0.1rem;
 }
 
 #calButton {
