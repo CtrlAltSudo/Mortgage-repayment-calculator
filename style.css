@@ -63,20 +63,16 @@ main {
 h3 {
     display: block;
 }
-/* .inputWrap {
-    display: flex;
-    flex-direction: column;
-} */
-.inputContainer {
+
+.inputContainer1, .inputContainer2, .inputContainer3 {
     display: flex;
     border: 1px solid var(--Slate300);
     border-radius: 0.5rem;
+    width: 100%;
+    margin: 0.5rem 0 1.25rem 0;
 
 }
-.intLabel {
-    background-color: var(--Slate300);
 
-}
 label, h2 {
     text-align: left;
     font-size: 1rem;
@@ -84,23 +80,20 @@ label, h2 {
     font-weight: 500;
     color: var(--Slate500);
 }
-#morType label {
-    border: 1px solid var(--Slate300);
-}
+
 #inlineWrapInputs {
     display: flex;
     gap: 1rem;
 }
-#inlineWrapInputs .inputWrap input {
+input {
    width: 100%; 
-   margin: 0.5rem;
+   padding: 1rem;
    border: transparent;
    outline: transparent;
+   border-radius: inherit;
+   margin: 0;
 }
-#morAmount {
-    margin-bottom: 0.9rem;
-    border: 1px solid var(--Slate700);
-}
+
 .topHeadButton h1 {
     font-size: 1.2rem;
     color: black;
@@ -116,9 +109,12 @@ label, h2 {
     margin-top: 0;
      
 }
-.intLabel {
-    align-self: center;
-    border-radius: 0.1rem;
+.intLabel, .durLabel {
+    border-radius: 0 0 0.5rem 0.5rem;
+    background-color: var(--Slate100);
+    display: flex;
+    align-items: center;
+    padding: 1rem;
 }
 
 #calButton {

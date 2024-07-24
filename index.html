@@ -24,24 +24,27 @@
         <h1>Mortgage Calculator</h1> 
        <h2>Clear All</h2> 
       </div>
-      <div class="inputWrap">
       <label for="test">Mortgage Amount</label>
+      <form action="" id="mortgageForm">
+      <div class="inputContainer3">
       <input type="text" name="Mortgage Amount" id="morAmount">
     </div>
     <div id="inlineWrapInputs">
     <div class="inputWrap">
       <label for="mortgageTerm">Mortgage Term</label>
+      <div class="inputContainer1">
       <input type="text" id="term" value="25">
+      <span class="durLabel">Years</span>
+      </div>
       </div>
       <div class="inputWrap">
         <label for="interestRate">Interest Rate</label>
-        <div class="inputContainer">
+        <div class="inputContainer2">
     <input type="text" id="interest" value="5.25">
     <span class="intLabel">%</span>
   </div>
   </div>
 </div>
-      <form action="" id="morType">
        <h2>Mortgage Type</h2> 
         <input type="checkbox" name="Repayment" id="repay">
         <label for="repay">Repayment</label> <br>
