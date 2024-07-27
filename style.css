@@ -70,6 +70,7 @@ h3 {
     border-radius: 0.5rem;
     width: 100%;
     margin: 0.5rem 0 1.25rem 0;
+    overflow: hidden;
 
 }
 
@@ -110,7 +111,6 @@ input {
      
 }
 .intLabel, .durLabel {
-    border-radius: 0 0 0.5rem 0.5rem;
     background-color: var(--Slate100);
     display: flex;
     align-items: center;
