@@ -14,7 +14,9 @@
 --Slate900: hsl(202, 55%, 16%);
 }
 
-
+body {
+    min-height: 100vh;
+}
 
 main {
     display: flex;
@@ -42,6 +44,8 @@ main {
     background-color: var(--Slate900);
     border-radius: 0 1rem 1rem 5rem;
     color: var(--Slate300);
+    display: flex;
+    flex-direction: column;
 }
 .topHeadButton {
     display: flex;
@@ -81,6 +85,8 @@ input {
     outline: transparent;
     border-radius: inherit;
     margin: 0;
+    font-weight: 700;
+    font-size: 1rem;
  }
  
 
@@ -144,8 +150,11 @@ button span {
 #resultsContainer p {
     font-size: 1rem;
     text-align: center;
+    margin-bottom: auto;
 }
-
+#resultsContainer h1 {
+    margin-bottom: 0;
+}
 
 #typeContainer {
     display: flex;
@@ -159,6 +168,9 @@ button span {
     align-items: center;
     cursor: pointer;
     margin-bottom: 0.5rem; /* Add margin between radio buttons */
+    border: 1px solid var(--Lime);
+    padding: 1rem;
+    border-radius: 0.2rem;
 }
 
 .custom-radio input {
@@ -192,8 +204,9 @@ button span {
 }
 
 .custom-radio input:checked + .checkmark {
-    background-color: #4caf50;
+    background-color: var(--Lime);
 }
+
 
 .custom-radio input:checked + .checkmark::after {
     display: block;
