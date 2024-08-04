@@ -27,6 +27,7 @@
       <label for="test">Mortgage Amount</label>
       <form action="" id="mortgageForm">
       <div class="inputContainer3">
+        <span class="amountLabel">£</span>
       <input type="text" name="Mortgage Amount" id="morAmount">
     </div>
     <div id="inlineWrapInputs">
@@ -46,16 +47,23 @@
   </div>
 </div>
        <h2>Mortgage Type</h2> 
-        <input type="checkbox" name="Repayment" id="repay">
-        <label for="repay">Repayment</label> <br>
-
-        <input type="checkbox" name="Interest" id="int">
-        <label for="int">Interest Only</label><br>
+       <div id="typeContainer">
+        <label class="custom-radio" for="repay"> 
+          <input type="radio" id="repay" name="mortgageType">
+          <span class="checkmark"></span>
+          Repayment
+      </label>
+      <label class="custom-radio" for="int"> 
+          <input type="radio" id="int" name="mortgageType">
+          <span class="checkmark"></span>
+          Interest
+      </label>
+    
       </form>
      <button id="calButton"> <img src="/images/icon-calculator.svg" alt="calculate button">
       <span>Calculate Repayments</span></button> 
     </div>
-
+  </div>
 <div id="resultsContainer">
   <!-- Empty results start -->
 <img src="/images/illustration-empty.svg" alt="calculation illustration" >

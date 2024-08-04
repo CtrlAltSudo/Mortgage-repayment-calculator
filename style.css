@@ -15,20 +15,7 @@
 }
 
 
- #repay {
-    
-    width: 1.3em;
-    height: 1.3em;
-    background-color: white;
-    border-radius: 50%;
-    vertical-align: middle;
-    border: 1px solid #ddd;
-    appearance: none;
-    -webkit-appearance: none;
-    outline: none;
-    cursor: pointer;
 
-}
 main {
     display: flex;
     justify-content: center;
@@ -86,14 +73,16 @@ label, h2 {
     display: flex;
     gap: 1rem;
 }
+
 input {
-   width: 100%; 
-   padding: 1rem;
-   border: transparent;
-   outline: transparent;
-   border-radius: inherit;
-   margin: 0;
-}
+    width: 100%; 
+    padding: 1rem;
+    border: transparent;
+    outline: transparent;
+    border-radius: inherit;
+    margin: 0;
+ }
+ 
 
 .topHeadButton h1 {
     font-size: 1.2rem;
@@ -110,7 +99,7 @@ input {
     margin-top: 0;
      
 }
-.intLabel, .durLabel {
+.intLabel, .durLabel, .amountLabel {
     background-color: var(--Slate100);
     display: flex;
     align-items: center;
@@ -157,3 +146,55 @@ button span {
     text-align: center;
 }
 
+
+#typeContainer {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+/* Disclaimer, I used chatGPT for the creation of the radio buttons, have never needed to customise buttons before :(  */
+/* Create a custom radio button */
+.custom-radio {
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+    margin-bottom: 0.5rem; /* Add margin between radio buttons */
+}
+
+.custom-radio input {
+    position: absolute;
+    opacity: 0;
+    cursor: pointer;
+    height: 0;
+    width: 0;
+}
+
+.custom-radio .checkmark {
+    display: inline-block;
+    width: 20px;
+    height: 20px;
+    background-color: #ccc;
+    border-radius: 50%; /* Make it round */
+    margin-right: 10px; /* Add space between the radio button and label text */
+    position: relative;
+}
+
+.custom-radio .checkmark::after {
+    content: "";
+    position: absolute;
+    display: none;
+    left: 7px;
+    top: 7px;
+    width: 6px;
+    height: 6px;
+    border-radius: 50%; /* Make the inner circle round */
+    background: white;
+}
+
+.custom-radio input:checked + .checkmark {
+    background-color: #4caf50;
+}
+
+.custom-radio input:checked + .checkmark::after {
+    display: block;
+}
