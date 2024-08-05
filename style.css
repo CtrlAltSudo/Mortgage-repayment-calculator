@@ -51,6 +51,7 @@ main {
     display: flex;
     justify-content: space-between;
 }
+
 h3 {
     display: block;
 }
@@ -125,6 +126,7 @@ input {
     width: auto;
     cursor: pointer;
 }
+
 button span {
     align-self: flex-end;
 }
@@ -168,9 +170,14 @@ button span {
     align-items: center;
     cursor: pointer;
     margin-bottom: 0.5rem; /* Add margin between radio buttons */
-    border: 1px solid var(--Lime);
+    border: 1px solid var(--Slate300);
     padding: 1rem;
     border-radius: 0.2rem;
+}
+
+.custom-radio:focus-within {
+    background-color: rgba(215, 218, 47, 0.2);
+    border-color: var(--Lime)
 }
 
 .custom-radio input {
@@ -185,7 +192,8 @@ button span {
     display: inline-block;
     width: 20px;
     height: 20px;
-    background-color: #ccc;
+    padding: 0.5rem;
+    border: 2px solid var(--Lime);
     border-radius: 50%; /* Make it round */
     margin-right: 10px; /* Add space between the radio button and label text */
     position: relative;
@@ -195,19 +203,29 @@ button span {
     content: "";
     position: absolute;
     display: none;
-    left: 7px;
-    top: 7px;
-    width: 6px;
-    height: 6px;
+    left: 3px;
+    top: 3px;
+    width: 10px;
+    height: 10px;
     border-radius: 50%; /* Make the inner circle round */
-    background: white;
+    background: var(--Lime);
 }
 
-.custom-radio input:checked + .checkmark {
-    background-color: var(--Lime);
-}
 
 
 .custom-radio input:checked + .checkmark::after {
     display: block;
 }
+
+label:focus {
+    background-color: pink;
+}
+
+#calculationWrap {
+    display: none;
+    flex-direction: column;
+}
+#resultsContainer {
+    display: flex;
+}
+
