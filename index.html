@@ -58,13 +58,12 @@
           <span class="checkmark"></span>
           <span>Interest</span>
       </label>
-      
+      <button id="calButton" type="submit" value="Submit"> <img src="/images/icon-calculator.svg" alt="calculate button">
+        <span>Calculate Repayments</span></button> 
+    </div>
       </form>
     </div>
-    <button id="calButton"> <img src="/images/icon-calculator.svg" alt="calculate button">
-      <span>Calculate Repayments</span></button> 
-  </div>
-<div id="resultsContainer">
+
   <!-- Empty results start -->
    <div id="calculationWrap">
 <img src="/images/illustration-empty.svg" alt="calculation illustration" >
@@ -75,17 +74,18 @@
   <!-- Empty results end -->
 
   <!-- Completed results start -->
+   <div id="resultsContainer">
 <h1>  Your results</h1>
 
-
-  Your results are shown below based on the information you provided. 
-  To adjust the results, edit the form and click “calculate repayments” again.
-
-  Your monthly repayments
-
-  Total you'll repay over the term 
-
-  <!-- Completed results end
+<p> Your results are shown below based on the information you provided. 
+  To adjust the results, edit the form and click “calculate repayments” again.</p>
+ 
+<div class="repaymentContainer">
+  <h2>Your monthly repayments</h2> 
+  <div class="monthlyAmount"></div>
+  <h3>Total you'll repay over the term</h3>
+</div>
+</div>
 </div>
 </div>
 </main>
