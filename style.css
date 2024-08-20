@@ -246,3 +246,12 @@ label:focus {
     border-top: 5px solid var(--Lime);
     padding: 1.5rem;
 }
+
+@media only screen and (max-width: 600px) {
+    #mainContainer, #inlineWrapInputs {
+      flex-direction: column;
+    }
+    #mortgageContainer, #resultsContainer {
+        width: 100%;
+    }
+  }

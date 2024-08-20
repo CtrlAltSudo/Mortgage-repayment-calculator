@@ -9,9 +9,13 @@ const repaymentCheck = mortgageType[0]
 const interestCheck = mortgageType[1]
 
 
-function calculate(amount, term, interest) {
-    const annualInterestRate = interest / 100;
-    const totalInterest = amount * annualInterestRate * term;
-    const totalAmount = amount + totalInterest;
-    console.log(`Total repayment after ${term} years: ${totalAmount}`);
+/* const calculate = (amount, interest, term) => {
+    return amount * (interest / 100) * term;
+}
+ */
+
+
+
+function calculate(amount, interest, term) {
+    return amount * (interest / 100) * term;
 }
