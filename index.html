@@ -28,22 +28,25 @@
       <form action="" id="mortgageForm">
       <div class="inputContainer3">
         <span class="amountLabel">£</span>
-      <input type="number" name="Mortgage Amount" id="morAmount" value="300,000">
+      <input  required type="text" pattern="[0-9]+" name="Mortgage Amount" id="morAmount" inputmode="numeric">
     </div>
+    <p id="errorMsg1" class="errorMsg">This field is required</p>
     <div id="inlineWrapInputs">
     <div class="inputWrap">
       <label for="mortgageTerm">Mortgage Term</label>
       <div class="inputContainer1">
-      <input type="number" id="term" value="25">
+      <input required type="number" id="term" value="25">
       <span class="durLabel">Years</span>
       </div>
+      <p id="errorMsg2" class="errorMsg">This field is required</p>
       </div>
       <div class="inputWrap">
         <label for="interestRate">Interest Rate</label>
         <div class="inputContainer2">
-    <input type="number" id="interest" value="5.25">
+    <input required type="number" id="interest" value="5.25">
     <span class="intLabel">%</span>
   </div>
+  <p id="errorMsg3" class="errorMsg">This field is required</p>
   </div>
 </div>
        <h2>Mortgage Type</h2> 
@@ -58,6 +61,7 @@
           <span class="checkmark"></span>
           <span>Interest</span>
       </label>
+      <p id="errorMsg4" class="errorMsg">This field is required</p>
       <button id="calButton" type="submit" value="Submit"> <img src="/images/icon-calculator.svg" alt="calculate button">
         <span>Calculate Repayments</span></button> 
     </div>
