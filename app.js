@@ -22,6 +22,23 @@ console.log(amount * (interest / 100) / 12 )
 const errorMsg = document.querySelector('.errorMsg');
 const form = document.querySelector("#mortgageForm");
 
+// Selectors for mortgage amount
+
+const errorContainer = document.querySelector(".inputContainer3").style.borderColor="red";
+const errorLabel = document.querySelector(".amountLabel").style.backgroundColor="red";
+const errorText = document.querySelector(".amountLabel").style.color="white";
+
+// Selectors for mortgage term
+
+const errorTerm = document.querySelector(".inputContainer1").style.borderColor="red";
+const errorTermBackground = document.querySelector(".durLabel").style.backgroundColor="red";
+const errorTermSymbol = document.querySelector(".durLabel").style.color="white";
+
+// Selectors for interest rate 
+
+const errorInt = document.querySelector(".inputContainer2").style.borderColor="red";
+const errorIntLabel = document.querySelector(".intLabel").style.backgroundColor="red";
+
 form.addEventListener("input", () => {
     isEmpty = false;
     for(let i = 0; i < 4; i++){

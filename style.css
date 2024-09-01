@@ -67,12 +67,7 @@ h3 {
     overflow: hidden;
 
 }
-input:user-valid {
-    border:2px solid green;
-}
-input:user-invalid {
-    border:2px solid red;
-}
+
 
 label, h2 {
     text-align: left;
@@ -251,7 +246,7 @@ label:focus {
     border-top: 5px solid var(--Lime);
     padding: 1.5rem;
 }
-.errorMsgs {
+.errorMsg {
     visibility: hidden;
     font-size: 0.8rem;
     color: var(--Red);

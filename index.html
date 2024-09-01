@@ -35,7 +35,7 @@
     <div class="inputWrap">
       <label for="mortgageTerm">Mortgage Term</label>
       <div class="inputContainer1">
-      <input required type="number" id="term" value="25">
+      <input required type="text" id="term" value="25" pattern="[0-9]+" inputmode="numeric">
       <span class="durLabel">Years</span>
       </div>
       <p id="errorMsg2" class="errorMsg">This field is required</p>
@@ -43,7 +43,7 @@
       <div class="inputWrap">
         <label for="interestRate">Interest Rate</label>
         <div class="inputContainer2">
-    <input required type="number" id="interest" value="5.25">
+    <input required type="text" id="interest" value="5.25">
     <span class="intLabel">%</span>
   </div>
   <p id="errorMsg3" class="errorMsg">This field is required</p>
