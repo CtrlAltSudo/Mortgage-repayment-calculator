@@ -16,7 +16,7 @@ const repaymentsCalculate = () => {
     return amount * (interest / 100) / 12;
 };
 
-// testing windows git push
+
 console.log(amount * (interest / 100) / 12 ) 
 
 /* For error states on inputs */
