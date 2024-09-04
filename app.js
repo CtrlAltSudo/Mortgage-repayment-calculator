@@ -19,7 +19,7 @@ const repaymentsCalculate = () => {
 console.log(amount * (interest / 100) / 12 ) 
 
 /* For error states on inputs */
-const errorMsg = document.querySelector('.errorMsg');
+const errorMsgs = document.querySelector('.errorMsg');
 const form = document.querySelector("#mortgageForm");
 
 // Selectors for mortgage amount
@@ -38,6 +38,9 @@ const errorTermSymbol = document.querySelector(".durLabel").style.color="white";
 
 const errorInt = document.querySelector(".inputContainer2").style.borderColor="red";
 const errorIntLabel = document.querySelector(".intLabel").style.backgroundColor="red";
+const intLabel = document.querySelector(".intLabel").style.color="white";
+
+// Checks if inputs are empty and displays error message if true 
 
 form.addEventListener("input", () => {
     isEmpty = false;
@@ -55,4 +58,4 @@ form.addEventListener("input", () => {
     }
 })
 
-
+//
