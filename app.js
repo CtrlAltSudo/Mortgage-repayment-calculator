@@ -4,20 +4,37 @@ const mortgageType = document.querySelectorAll('.checkmark');
 const repaymentCheck = mortgageType[0]
 const interestCheck = mortgageType[1]
 
-const amount = inputs[0].valueAsNumber;
-const term = inputs[1].valueAsNumber;
-const interest = inputs[2].valueAsNumber;
-
-/* button functions */
-const repaymentsCalculate = () => {
-    const amount = inputs[0].valueAsNumber;
-    const term = inputs[1].valueAsNumber;
-    const interest = inputs[2].valueAsNumber;
-    return amount * (interest / 100) / 12;
-};
+const amount = inputs[0].value;
+const term = inputs[1].value;
+const interest = inputs[2].value;
 
 
-console.log(amount * (interest / 100) / 12 ) 
+// Repayment Amount
+const monthlyAmount = document.querySelector('.monthlyAmount');
+
+
+// Submit button 
+const calButton = document.getElementById('calButton');
+
+// Submit button execute 
+calButton.addEventListener('click', function(event) {
+    event.preventDefault();
+    const amount = inputs[0].value;
+    const term = inputs[1].value;
+    const interest = inputs[2].value;
+    //Interest calculation
+    if(document.querySelector('#int').checked){
+        console.log(amount * (interest / 100) / 12);
+        console.log("Interest is checked");
+        return monthlyAmount.innerHTML = amount * (interest / 100) / 12;
+    //Repayment Calculation
+    }else if(document.querySelector('#repay').checked){
+        return monthlyAmount.innerHTML = "repay calculation"
+            console.log("Repay is checked")
+        }
+
+})
+
 
 /* For error states on inputs */
 const errorMsgs = document.querySelector('.errorMsg');
@@ -53,7 +70,7 @@ form.addEventListener("input", () => {
             errorMsg.style.visibility = 'visible';
             console.log(`form[${i}] is empty`);
         } else {
-            errorMsg.style.visibility = 'hidden';
+         /*    errorMsg.style.visibility = 'hidden'; */
             console.log(`form[${i}] is not empty`);
         }
     }
@@ -61,5 +78,3 @@ form.addEventListener("input", () => {
 
 //
 
-
-/* test */
