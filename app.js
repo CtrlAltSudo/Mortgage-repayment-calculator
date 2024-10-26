@@ -4,11 +4,22 @@ const mortgageType = document.querySelectorAll('.checkmark');
 const repaymentCheck = mortgageType[0]
 const interestCheck = mortgageType[1]
 
-const amount = inputs[0].value;
+let amount = inputs[0].value;
 const term = inputs[1].value;
 const interest = inputs[2].value;
 
+// Formatting amount input
+inputs[0].addEventListener('input', function() {
+    let oldValue = inputs[0].value.replace(/,/g, '');
+    console.log(oldValue);
+    if (isNaN(parseInt(oldValue))){
+        console.log("not a number")
+    } else {
+    inputs[0].value = parseInt(oldValue).toLocaleString();
+    }
+});
 
+  
 // Repayment Amount
 const monthlyAmount = document.querySelector('.monthlyAmount');
 
@@ -19,9 +30,10 @@ const calButton = document.getElementById('calButton');
 // Submit button execute 
 calButton.addEventListener('click', function(event) {
     event.preventDefault();
-    const amount = inputs[0].value;
+    const amount = inputs[0].value.replace(/,/g, '');
     const term = inputs[1].value;
     const interest = inputs[2].value;
+    console.log(amount)
     //Interest calculation
     if(document.querySelector('#int').checked){
         console.log(amount * (interest / 100) / 12);
