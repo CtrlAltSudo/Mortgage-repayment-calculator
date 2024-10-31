@@ -54,19 +54,16 @@ const form = document.querySelector("#mortgageForm");
 
 // Selectors for mortgage amount
 
-const errorContainer = document.querySelector(".inputContainer3").style.borderColor="red";
 const errorLabel = document.querySelector(".amountLabel").style.backgroundColor="red";
 const errorText = document.querySelector(".amountLabel").style.color="white";
 
 // Selectors for mortgage term
 
-const errorTerm = document.querySelector(".inputContainer1").style.borderColor="red";
 const errorTermBackground = document.querySelector(".durLabel").style.backgroundColor="red";
 const errorTermSymbol = document.querySelector(".durLabel").style.color="white";
 
 // Selectors for interest rate 
 
-const errorInt = document.querySelector(".inputContainer2").style.borderColor="red";
 const errorIntLabel = document.querySelector(".intLabel").style.backgroundColor="red";
 const intLabel = document.querySelector(".intLabel").style.color="white";
 
@@ -79,10 +76,16 @@ form.addEventListener("input", () => {
     const errorMsg = errorMsgs[i];
         // Check if the field is empty
         if (inputField.value === "") {
+            const errorInt = document.querySelector(".inputContainer2").style.borderColor="red";
+            const errorTerm = document.querySelector(".inputContainer1").style.borderColor="red";
+            const errorContainer = document.querySelector(".inputContainer3").style.borderColor="red";
             errorMsg.style.visibility = 'visible';
             console.log(`form[${i}] is empty`);
         } else {
          /*    errorMsg.style.visibility = 'hidden'; */
+         const errorInt = document.querySelector(".inputContainer2").style.borderColor = "var(--slate300)";
+         const errorTerm = document.querySelector(".inputContainer1").style.borderColor="var(--slate300)";
+         const errorContainer = document.querySelector(".inputContainer3").style.borderColor="var(--slate300)";
             console.log(`form[${i}] is not empty`);
         }
     }
