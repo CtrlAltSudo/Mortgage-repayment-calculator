@@ -27,7 +27,7 @@ const monthlyAmount = document.querySelector('.monthlyAmount');
 // Submit button 
 const calButton = document.getElementById('calButton');
 
-// Submit button execute 
+// Submit button execute calculation
 calButton.addEventListener('click', function(event) {
     event.preventDefault();
     const amount = inputs[0].value.replace(/,/g, '');
@@ -49,7 +49,7 @@ calButton.addEventListener('click', function(event) {
 
 
 /* For error states on inputs */
-const errorMsgs = document.querySelector('.errorMsg');
+const errorMsgs = document.querySelectorAll('.errorMsg');
 const form = document.querySelector("#mortgageForm");
 
 // Selectors for mortgage amount
@@ -67,29 +67,25 @@ const errorTermSymbol = document.querySelector(".durLabel").style.color="white";
 const errorIntLabel = document.querySelector(".intLabel").style.backgroundColor="red";
 const intLabel = document.querySelector(".intLabel").style.color="white";
 
-// Checks if inputs are empty and displays error message if true 
+// Checks if inputs are empty and displays error message/coloured border 
 
 form.addEventListener("input", () => {
-    isEmpty = false;
-    for(let i = 0; i < 4; i++){
-    const inputField = form[i];
-    const errorMsg = errorMsgs[i];
-        // Check if the field is empty
+    for (let i = 0; i < 4; i++) {
+        const inputField = form[i];
+        const errorMsg = errorMsgs[i];
+        const container = document.querySelector(`.inputContainer${i + 1}`);
+
+        // Check if each field is empty
         if (inputField.value === "") {
-            const errorInt = document.querySelector(".inputContainer2").style.borderColor="red";
-            const errorTerm = document.querySelector(".inputContainer1").style.borderColor="red";
-            const errorContainer = document.querySelector(".inputContainer3").style.borderColor="red";
+            container.style.borderColor = "red";
             errorMsg.style.visibility = 'visible';
-            console.log(`form[${i}] is empty`);
         } else {
-         /*    errorMsg.style.visibility = 'hidden'; */
-         const errorInt = document.querySelector(".inputContainer2").style.borderColor = "var(--slate300)";
-         const errorTerm = document.querySelector(".inputContainer1").style.borderColor="var(--slate300)";
-         const errorContainer = document.querySelector(".inputContainer3").style.borderColor="var(--slate300)";
-            console.log(`form[${i}] is not empty`);
+            container.style.borderColor = "var(--slate300)";
+            errorMsg.style.visibility = 'hidden';
         }
     }
-})
+});
+
 
 //
 
