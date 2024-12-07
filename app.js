@@ -1,14 +1,25 @@
+// Form select
+const form = document.querySelector('form');
+
+// Selecting all inputs
 const inputs = document.querySelectorAll('input');
 
+// Specific inputs
+
+
+// Radio button selection 
 const mortgageType = document.querySelectorAll('.checkmark');
 const repaymentCheck = mortgageType[0]
 const interestCheck = mortgageType[1]
 
-let amount = inputs[0].value;
-const term = inputs[1].value;
-const interest = inputs[2].value;
+// Repayment Amount
+const monthlyAmount = document.querySelector('.monthlyAmount');
 
-// Formatting amount input
+// Submit button 
+const calButton = document.getElementById('calButton');
+
+
+// Formatting amount input value
 inputs[0].addEventListener('input', function() {
     let oldValue = inputs[0].value.replace(/,/g, '');
     console.log(oldValue);
@@ -19,38 +30,32 @@ inputs[0].addEventListener('input', function() {
     }
 });
 
-  
-// Repayment Amount
-const monthlyAmount = document.querySelector('.monthlyAmount');
+// Form 
+form.addEventListener('input', e => {
+    e.preventDefault();
 
 
-// Submit button 
-const calButton = document.getElementById('calButton');
-
-// Submit button execute calculation
-calButton.addEventListener('click', function(event) {
-    event.preventDefault();
-    const amount = inputs[0].value.replace(/,/g, '');
-    const term = inputs[1].value;
-    const interest = inputs[2].value;
-    console.log(amount)
-    //Interest calculation
-    if(document.querySelector('#int').checked){
-        console.log(amount * (interest / 100) / 12);
-        console.log("Interest is checked");
-        return monthlyAmount.innerHTML = amount * (interest / 100) / 12;
-    //Repayment Calculation
-    }else if(document.querySelector('#repay').checked){
-        return monthlyAmount.innerHTML = "repay calculation"
-            console.log("Repay is checked")
-        }
-
-})
+    validateInputs();
+});
+//testing 
+// Error Handling 
 
 
-/* For error states on inputs */
-const errorMsgs = document.querySelectorAll('.errorMsg');
-const form = document.querySelector("#mortgageForm");
+
+
+// Form validation check
+
+const validateInputs = () => {
+    const amount = inputs[0].value.trim();
+    const term = inputs[1].value.trim();
+    const interest = inputs[2].value.trim();
+
+    if(amount === ''){
+
+    }
+
+
+};
 
 // Selectors for mortgage amount
 
@@ -67,25 +72,4 @@ const errorTermSymbol = document.querySelector(".durLabel").style.color="white";
 const errorIntLabel = document.querySelector(".intLabel").style.backgroundColor="red";
 const intLabel = document.querySelector(".intLabel").style.color="white";
 
-// Checks if inputs are empty and displays error message/coloured border 
-
-form.addEventListener("input", () => {
-    for (let i = 0; i < 4; i++) {
-        const inputField = form[i];
-        const errorMsg = errorMsgs[i];
-        const container = document.querySelector(`.inputContainer${i + 1}`);
-
-        // Check if each field is empty
-        if (inputField.value === "") {
-            container.style.borderColor = "red";
-            errorMsg.style.visibility = 'visible';
-        } else {
-            container.style.borderColor = "var(--slate300)";
-            errorMsg.style.visibility = 'hidden';
-        }
-    }
-});
-
-
-//
 
