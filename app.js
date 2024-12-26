@@ -4,9 +4,6 @@ const form = document.querySelector('form');
 // Selecting all inputs
 const inputs = document.querySelectorAll('input');
 
-// Specific inputs
-
-
 // Radio button selection 
 const mortgageType = document.querySelectorAll('.checkmark');
 const repaymentCheck = mortgageType[0]
@@ -30,46 +27,52 @@ inputs[0].addEventListener('input', function() {
     }
 });
 
-// Form 
-form.addEventListener('input', e => {
-    e.preventDefault();
+// Form submit function
 
+form.addEventListener("submit", (e) => {
+    e.preventDefault()
+    console.log("it works")
+})
 
-    validateInputs();
-});
-//testing 
-// Error Handling 
-
-
-
-
-// Form validation check
-
-const validateInputs = () => {
-    const amount = inputs[0].value.trim();
-    const term = inputs[1].value.trim();
-    const interest = inputs[2].value.trim();
-
-    if(amount === ''){
-
+form.addEventListener("input", (e) => {
+    if(inputs[0].value === ""){
+        console.log("invalid amount")
+        document.querySelector(".inputContainer3").style.borderColor = "red"
+        document.querySelector(".amountLabel").style.backgroundColor = "red"
+        document.querySelector(".amountLabel").style.color = "white"
+        document.querySelector("#errorMsg1").style.visibility = "visible";   
+    } else {
+        document.querySelector(".inputContainer3").style.borderColor = ""
+        document.querySelector(".amountLabel").style.backgroundColor = ""
+        document.querySelector(".amountLabel").style.color = ""
+        document.querySelector("#errorMsg1").style.visibility = "";   
     }
+    if(inputs[1].value === ""){
+        document.querySelector(".inputContainer1").style.borderColor = "red"
+        document.querySelector(".durLabel").style.backgroundColor = "red"
+        document.querySelector(".durLabel").style.color = "white"
+        document.querySelector("#errorMsg2").style.visibility = "visible";   
+    } else {
+        document.querySelector(".inputContainer1").style.borderColor = ""
+        document.querySelector(".durLabel").style.backgroundColor = ""
+        document.querySelector(".durLabel").style.color = ""
+        document.querySelector("#errorMsg2").style.visibility = "";   
+    }
+    if(inputs[2].value === ""){
+        document.querySelector(".inputContainer2").style.borderColor = "red"
+        document.querySelector(".intLabel").style.backgroundColor = "red"
+        document.querySelector(".intLabel").style.color = "white"
+        document.querySelector("#errorMsg3").style.visibility = "visible";   
+    } else {
+        document.querySelector(".inputContainer2").style.borderColor = ""
+        document.querySelector(".intLabel").style.backgroundColor = ""
+        document.querySelector(".intLabel").style.color = ""
+        document.querySelector("#errorMsg3").style.visibility = "";   
+    } 
+    if(inputs[3].checked && inputs[4].checked === "false"){
+        document.querySelector("#errorMsg4").style.visibility = "visible";   
+    }
+})
 
-
-};
-
-// Selectors for mortgage amount
-
-const errorLabel = document.querySelector(".amountLabel").style.backgroundColor="red";
-const errorText = document.querySelector(".amountLabel").style.color="white";
-
-// Selectors for mortgage term
-
-const errorTermBackground = document.querySelector(".durLabel").style.backgroundColor="red";
-const errorTermSymbol = document.querySelector(".durLabel").style.color="white";
-
-// Selectors for interest rate 
-
-const errorIntLabel = document.querySelector(".intLabel").style.backgroundColor="red";
-const intLabel = document.querySelector(".intLabel").style.color="white";
-
+//Form styling
 
