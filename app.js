@@ -37,15 +37,10 @@ form.addEventListener("submit", (e) => {
 form.addEventListener("input", (e) => {
     if(inputs[0].value === ""){
         console.log("invalid amount")
-        document.querySelector(".inputContainer3").style.borderColor = "red"
-        document.querySelector(".amountLabel").style.backgroundColor = "red"
-        document.querySelector(".amountLabel").style.color = "white"
-        document.querySelector("#errorMsg1").style.visibility = "visible";   
+        errorDisplay()
+
     } else {
-        document.querySelector(".inputContainer3").style.borderColor = ""
-        document.querySelector(".amountLabel").style.backgroundColor = ""
-        document.querySelector(".amountLabel").style.color = ""
-        document.querySelector("#errorMsg1").style.visibility = "";   
+        errorRemove()
     }
     if(inputs[1].value === ""){
         document.querySelector(".inputContainer1").style.borderColor = "red"
@@ -76,5 +71,16 @@ form.addEventListener("input", (e) => {
 
 //Form styling
 
-//git test
 
+function errorDisplay(){
+    document.querySelector(".inputContainer3").style.borderColor = "red"
+    document.querySelector(".amountLabel").style.backgroundColor = "red"
+    document.querySelector(".amountLabel").style.color = "white"
+    document.querySelector("#errorMsg1").style.visibility = "visible";   
+}
+function errorRemove(){
+    document.querySelector(".inputContainer3").style.borderColor = ""
+    document.querySelector(".amountLabel").style.backgroundColor = ""
+    document.querySelector(".amountLabel").style.color = ""
+    document.querySelector("#errorMsg1").style.visibility = "";   
+}
