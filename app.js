@@ -31,6 +31,20 @@ inputs[0].addEventListener('input', function() {
 
 form.addEventListener("submit", (e) => {
     e.preventDefault()
+    //Calculations 
+    //Term divided into months 
+    const termMonths = inputs[1].value * 12;
+    //Mortgage as number
+    const mortVal = inputs[0].value.replace(/,/g, "");
+    //Mortgage divied by term
+    const mortTerm = mortVal / inputs[2].value;
+    //Interest to Decimal
+    const intDeci = inputs[2].value / 100;
+    //Repayment Calculate 
+    const repayCal = (mortVal - mortVal / 3) * intDeci / 12 + mortVal / termMonths;
+    console.log(repayCal)
+    //Interest repayment total 
+    monthlyAmount.innerText = Number(inputs[0].value.replace(/,/g, "")) * intDeci / 12 * inputs[1].value;
     console.log("it works")
 })
 
@@ -74,5 +88,6 @@ form.addEventListener("input", (e) => {
     }
 })
 
-//Form styling
+
+
 
