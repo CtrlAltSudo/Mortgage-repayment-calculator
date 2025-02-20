@@ -31,7 +31,8 @@ inputs[0].addEventListener('input', function() {
 
 form.addEventListener("submit", (e) => {
     e.preventDefault()
-    //Calculations 
+    if(document.querySelector("#repay").checked){
+    //Repayment Calculation
     //Term divided into months 
     const termMonths = inputs[1].value * 12;
     //Mortgage as number
@@ -43,9 +44,13 @@ form.addEventListener("submit", (e) => {
     //Repayment Calculate 
     const repayCal = (mortVal - mortVal / 3) * intDeci / 12 + mortVal / termMonths;
     console.log(repayCal)
+    monthlyAmount.innerText = repayCal
     //Interest repayment total 
-    monthlyAmount.innerText = Number(inputs[0].value.replace(/,/g, "")) * intDeci / 12 * inputs[1].value;
-    console.log("it works")
+   // monthlyAmount.innerText = Number(inputs[0].value.replace(/,/g, "")) * intDeci / 12 * inputs[1].value;
+    } else if(document.querySelector("#int").checked){
+        console.log("interest is now checked")
+    }
+
 })
 
 form.addEventListener("input", (e) => {
@@ -82,10 +87,6 @@ form.addEventListener("input", (e) => {
         document.querySelector("#errorMsg4").style.visibility = "visible";   
     }
 })
-
-
-
-
 
 function errorDisplay(){
     document.querySelector(".inputContainer3").style.borderColor = "red"
