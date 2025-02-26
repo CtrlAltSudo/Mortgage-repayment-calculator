@@ -11,9 +11,12 @@ const interestCheck = mortgageType[1]
 
 // Repayment Amount
 const monthlyAmount = document.querySelector('.monthlyAmount');
+// Total amount
+const totalAmount = document.querySelector('.totalAmount')
 
 // Submit button 
 const calButton = document.getElementById('calButton');
+
 
 
 // Formatting amount input value
@@ -42,12 +45,17 @@ form.addEventListener("submit", (e) => {
         //Repayment Calculate 
     if(document.querySelector("#repay").checked){
     //Repayment Calculation
-    const repayCal = Math.floor((mortVal - mortVal / 3) * intDeci / 12 + mortVal / termMonths * 100) / 100  ;
+    const repayCal = Math.floor((mortVal - mortVal / 3) * intDeci / 12 + mortVal / termMonths);
     monthlyAmount.innerHTML = "<span>£</span>" + repayCal
+    console.log(repayCal)
     } else if(document.querySelector("#int").checked){
-        //Interest repayment total 
-        const intRepay = Math.floor(mortVal * intDeci / 12 * 100) / 100 ;
+        //Interest repayment monthly total 
+        const intRepay = Math.floor(mortVal * intDeci / 12);
         monthlyAmount.innerHTML = "<span>£</span>" + intRepay;
+        //Interest repayment total amount
+        const intRepayTotal = Math.floor(intRepay * termMonths * 100) / 100;
+        totalAmount.innerHTML = "<span>£</span>" + intRepayTotal;
+        
     }
 
 })
