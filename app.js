@@ -6,8 +6,10 @@ const inputs = document.querySelectorAll('input');
 
 // Radio button selection 
 const mortgageType = document.querySelectorAll('.checkmark');
+console.log(mortgageType)
 const repaymentCheck = mortgageType[0]
 const interestCheck = mortgageType[1]
+
 
 // Repayment Amount
 const monthlyAmount = document.querySelector('.monthlyAmount');
@@ -16,6 +18,17 @@ const totalAmount = document.querySelector('.totalAmount')
 
 // Submit button 
 const calButton = document.getElementById('calButton');
+
+//Clear all button  
+
+//Selects checkmark
+const clearBtn = document.querySelector('#clearBtn');
+clearBtn.addEventListener('click', function(e){
+    console.log("clear button fired, inputs cleared")
+    repaymentCheck.checked = false;
+    mortgageType.classList.remove("display")
+    document.querySelector("custom-radio.input:checked")
+})
 
 
 

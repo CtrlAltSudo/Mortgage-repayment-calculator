@@ -55,6 +55,10 @@ main {
     justify-content: space-between;
 }
 
+#clearBtn {
+cursor: pointer;
+}
+
 h3 {
     display: block;
 }
@@ -151,19 +155,20 @@ button span {
     margin: auto auto 1rem auto;
 }
 #resultsContainer h1 {
-    margin: 0 auto 1rem;
+    margin: 0;
     color: var(--Slate100);
-    font-size: 1.2rem;
-    font-weight: 400;
+    font-size: 1.6rem;
+    font-weight: 500;
+    text-align: left;
 }
 #resultsContainer p {
     font-size: 1rem;
+    font-weight: 100;
     text-align: center;
-    margin-bottom: auto;
+    margin-bottom: 1rem;
+    line-height: 25px;
 }
-#resultsContainer h1 {
-    margin-bottom: 0;
-}
+
 .monthlyAmount {
     color: var(--Lime);
     font-size: 3rem;
@@ -241,6 +246,7 @@ label:focus {
 
 #resultsContainer p {
     text-align: left;
+    margin-bottom: 2rem;
 }
 
 #resultsContainer h2 {
@@ -254,6 +260,7 @@ label:focus {
     border-radius: 0.5rem;
     border-top: 5px solid var(--Lime);
     padding: 1.5rem;
+    margin-bottom: auto;
 }
 .error {
     border-color: red;
