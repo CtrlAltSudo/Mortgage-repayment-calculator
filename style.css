@@ -59,6 +59,7 @@ main {
 cursor: pointer;
 }
 
+
 h3 {
     display: block;
 }
@@ -71,6 +72,9 @@ h3 {
     margin: 0.5rem 0 0.5rem 0;
     overflow: hidden;
 
+}
+.inputContainer1:hover, .inputContainer2:hover, .inputContainer3:hover {
+    border: 1px black solid;
 }
 
 #line {
@@ -99,6 +103,7 @@ input {
     margin: 0;
     font-weight: 700;
     font-size: 1rem;
+    cursor: pointer;
  }
  
 
@@ -130,19 +135,19 @@ input {
     border: none;
     background-color: var(--Lime);
     border-radius: 2rem;
-    padding: 1rem 2rem 1rem 2rem;
-    margin-top: 1rem;
-    font-size: 1rem;
+    padding: 0.75rem 2rem 0.75rem 2rem;
+    font-size: 0.9rem;
     font-weight: 700;
     width: 17rem;
     cursor: pointer;
+    margin-top: 1rem;
 }
 
 button span {
     align-self: flex-end;
 }
 #calButton img {
-    width: 1.5rem;
+    width: 1.2rem;
     height: auto;
 }
 
@@ -191,6 +196,9 @@ button span {
     padding: 1rem;
     border-radius: 0.2rem;
 }
+.custom-radio:hover {
+    border: 1px solid var(--Lime);
+}
 
 .custom-radio:focus-within {
     background-color: rgba(215, 218, 47, 0.2);
@@ -237,8 +245,18 @@ label:focus {
 }
 
 #calculationWrap {
-    display: none;
     flex-direction: column;
+    background-color: var(--Slate900);
+    color: var(--White);
+    text-align: center;
+    width: 50%;
+    border-radius: 0 1rem 1rem 5rem;
+
+}
+#calculationWrap img {
+    margin-top: 8.5rem;
+    width: auto;
+    height: 10rem;
 }
 #resultsContainer {
     display: flex;

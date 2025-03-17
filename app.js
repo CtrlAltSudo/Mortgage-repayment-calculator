@@ -61,6 +61,7 @@ form.addEventListener("submit", (e) => {
     const repayCal = Math.floor((mortVal - mortVal / 3) * intDeci / 12 + mortVal / termMonths);
     monthlyAmount.innerHTML = "<span>£</span>" + repayCal
     console.log(repayCal)
+    document.querySelector("#errorMsg4").style.visibility = "";   
     } else if(document.querySelector("#int").checked){
         //Interest repayment monthly total 
         const intRepay = Math.floor(mortVal * intDeci / 12);
@@ -68,12 +69,15 @@ form.addEventListener("submit", (e) => {
         //Interest repayment total amount
         const intRepayTotal = Math.floor(intRepay * termMonths * 100) / 100;
         totalAmount.innerHTML = "<span>£</span>" + intRepayTotal;
-        
+        document.querySelector("#errorMsg4").style.visibility = "";   
+    } else {
+        document.querySelector("#errorMsg4").style.visibility = "visible";   
+
     }
 
 })
 
-form.addEventListener("input", (e) => {
+form.addEventListener("submit", (e) => {
     if(inputs[0].value === ""){
         console.log("invalid amount")
         errorDisplay()

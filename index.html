@@ -28,14 +28,14 @@
       <form action="" id="mortgageForm">
       <div class="inputContainer3">
         <span class="amountLabel">£</span>
-      <input  required type="text"  name="Mortgage Amount" id="morAmount" >
+      <input  aria-required="true" type="text"  name="Mortgage Amount" id="morAmount" >
     </div>
     <p id="errorMsg1" class="errorMsg">This field is required</p>
     <div id="inlineWrapInputs">
     <div class="inputWrap">
       <label for="mortgageTerm">Mortgage Term</label>
       <div class="inputContainer1">
-      <input required type="text" id="term" value="25" pattern="[0-9]+" inputmode="numeric">
+      <input aria-required="true" type="text" id="term" value="25" pattern="[0-9]+" inputmode="numeric">
       <span class="durLabel">Years</span>
       </div>
       <p id="errorMsg2" class="errorMsg">This field is required</p>
@@ -43,7 +43,7 @@
       <div class="inputWrap">
         <label for="interestRate">Interest Rate</label>
         <div class="inputContainer2">
-    <input required type="text" id="interest" value="5.25">
+    <input aria-required="true" type="text" id="interest" value="5.25">
     <span class="intLabel">%</span>
   </div>
   <p id="errorMsg3" class="errorMsg">This field is required</p>
@@ -78,7 +78,7 @@
   <!-- Empty results end -->
 
   <!-- Completed results start -->
-   <div id="resultsContainer">
+<!--    <div id="resultsContainer">
 <h1>  Your results</h1>
 
 <p> Your results are shown below based on the information you provided. 
@@ -92,6 +92,7 @@
   <div class="totalAmount"><span>£</span>0</div>
 </div>
 </div>
+ -->
 </div>
 </div>
 </main>
