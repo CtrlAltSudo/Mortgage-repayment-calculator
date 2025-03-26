@@ -11,6 +11,8 @@ const repaymentCheck = mortgageType[0]
 const interestCheck = mortgageType[1]
 
 
+
+
 // Repayment Amount
 const monthlyAmount = document.querySelector('.monthlyAmount');
 // Total amount
@@ -30,7 +32,10 @@ clearBtn.addEventListener('click', function(e){
     document.querySelector("custom-radio.input:checked")
 })
 
-
+//Formatting function 
+function numberWithCommas(x) {
+    return x.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+}
 
 // Formatting amount input value
 inputs[0].addEventListener('input', function() {
@@ -59,23 +64,30 @@ form.addEventListener("submit", (e) => {
     if(document.querySelector("#repay").checked){
     //Repayment Calculation
     const repayCal = Math.floor((mortVal - mortVal / 3) * intDeci / 12 + mortVal / termMonths);
-    monthlyAmount.innerHTML = "<span>£</span>" + repayCal
-    console.log(repayCal)
-    document.querySelector("#errorMsg4").style.visibility = "";   
+    monthlyAmount.innerHTML = "<span>£</span>" + numberWithCommas(repayCal)
+    document.querySelector("#errorMsg4").style.visibility = "";  
+    //Total term calculation
+    const totalRepay = Math.floor(repayCal * 12) * term.value;
+    totalAmount.innerHTML = "<span>£</span>" +  numberWithCommas(totalRepay);
+         //Hide initial calculation page 
+        document.querySelector('#calculationWrap').style.display = "none"
+         //Hide initial calculation page 
+        document.querySelector('#resultsContainer').style.display = "flex"
     } else if(document.querySelector("#int").checked){
         //Interest repayment monthly total 
         const intRepay = Math.floor(mortVal * intDeci / 12);
-        monthlyAmount.innerHTML = "<span>£</span>" + intRepay;
+        monthlyAmount.innerHTML = "<span>£</span>" + numberWithCommas(intRepay);
         //Interest repayment total amount
         const intRepayTotal = Math.floor(intRepay * termMonths * 100) / 100;
-        totalAmount.innerHTML = "<span>£</span>" + intRepayTotal;
-        document.querySelector("#errorMsg4").style.visibility = "";   
+        totalAmount.innerHTML = "<span>£</span>" + numberWithCommas(intRepayTotal);
+        document.querySelector("#errorMsg4").style.visibility = ""; 
+
     } else {
         document.querySelector("#errorMsg4").style.visibility = "visible";   
 
     }
 
-})
+})  
 
 form.addEventListener("submit", (e) => {
     if(inputs[0].value === ""){

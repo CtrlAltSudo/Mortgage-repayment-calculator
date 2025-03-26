@@ -103,7 +103,7 @@ input {
     margin: 0;
     font-weight: 700;
     font-size: 1rem;
-    cursor: pointer;
+    cursor: text;
  }
  
 
@@ -251,6 +251,7 @@ label:focus {
     text-align: center;
     width: 50%;
     border-radius: 0 1rem 1rem 5rem;
+    display: block;
 
 }
 #calculationWrap img {
@@ -259,7 +260,7 @@ label:focus {
     height: 10rem;
 }
 #resultsContainer {
-    display: flex;
+    display: none;
 }
 
 #resultsContainer p {
