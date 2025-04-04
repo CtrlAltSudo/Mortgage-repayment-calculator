@@ -23,12 +23,19 @@ const calButton = document.getElementById('calButton');
 
 //Clear all button  
 
+
+
 //Selects checkmark
 const clearBtn = document.querySelector('#clearBtn');
 clearBtn.addEventListener('click', function(e){
     console.log("clear button fired, inputs cleared")
+    for(i = 0; i < 3; i++){
+        inputs[i].value = "";
+    }
+    interestCheck.checked = false;
+    mortgageType[0].style.width = 100 + 'px';
     repaymentCheck.checked = false;
-    mortgageType.classList.remove("display")
+/*     mortgageType.classList.remove("display") */
     document.querySelector("custom-radio.input:checked")
 })
 
@@ -89,6 +96,8 @@ form.addEventListener("submit", (e) => {
 
 })  
 
+
+// Displays and removes error messages based on whether something is inputted in form
 form.addEventListener("submit", (e) => {
     if(inputs[0].value === ""){
         console.log("invalid amount")
