@@ -142,6 +142,9 @@ input {
     cursor: pointer;
     margin-top: 1rem;
 }
+#calButton:hover {
+    opacity: 0.5;
+}
 
 button span {
     align-self: flex-end;
@@ -187,6 +190,7 @@ button span {
 }
 /* Disclaimer, I used chatGPT for the creation of the radio buttons, have never needed to customise buttons before :(  */
 /* Create a custom radio button */
+
 .custom-radio {
     display: flex;
     align-items: center;
@@ -199,7 +203,7 @@ button span {
 .custom-radio:hover {
     border: 1px solid var(--Lime);
 }
-
+ama
 .custom-radio:focus-within {
     background-color: rgba(215, 218, 47, 0.2);
     border-color: var(--Lime)
@@ -224,7 +228,7 @@ button span {
     position: relative;
 }
 
-.custom-radio .checkmark::after {
+.custom-radio .checkmark:after {
     content: "";
     position: absolute;
     display: none;
@@ -236,7 +240,7 @@ button span {
     background: var(--Lime);
 }
 
-.custom-radio input:checked + .checkmark::after {
+.custom-radio input:checked + .checkmark:after {
     display: block;
 }
 

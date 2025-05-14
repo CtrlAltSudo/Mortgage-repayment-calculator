@@ -10,9 +10,6 @@ console.log(mortgageType)
 const repaymentCheck = mortgageType[0]
 const interestCheck = mortgageType[1]
 
-
-
-
 // Repayment Amount
 const monthlyAmount = document.querySelector('.monthlyAmount');
 // Total amount
@@ -22,9 +19,6 @@ const totalAmount = document.querySelector('.totalAmount')
 const calButton = document.getElementById('calButton');
 
 //Clear all button  
-
-
-
 //Selects checkmark
 const clearBtn = document.querySelector('#clearBtn');
 clearBtn.addEventListener('click', function(e){
@@ -33,11 +27,30 @@ clearBtn.addEventListener('click', function(e){
         inputs[i].value = "";
     }
     interestCheck.checked = false;
-    mortgageType[0].style.width = 100 + 'px';
+    document.querySelectorAll(".custom-radio .checkmark")[0].style.position = "static";
+    document.querySelectorAll(".custom-radio .checkmark")[1].style.position = "static";
+    console.log("clear fired")
     repaymentCheck.checked = false;
-/*     mortgageType.classList.remove("display") */
-    document.querySelector("custom-radio.input:checked")
+    interestCheck.checked = false;
+    document.querySelector("#int").checked = false;
+    document.querySelector("#repay").checked = false;
 })
+
+//Ensure styling is present for radio buttons when clear all button is used
+checkmark = document.querySelector('#typeContainer');
+checkmark.addEventListener('click', function()  {
+    document.querySelectorAll(".custom-radio .checkmark")[0].style.position = "relative";
+    document.querySelectorAll(".custom-radio .checkmark")[1].style.position = "relative";
+
+})
+
+//Radio button background colour change on click
+radioBackground = checkmark;
+radioBackground.addEventListener('click', function() {
+    document.querySelectorAll(".custom-radio ")[0].style.backgroundColor = 'hsla(61, 70%, 52%, 0.2)';
+    document.querySelectorAll(".custom-radio ")[0].style.borderColor = 'hsl(61, 70%, 52%)';
+})
+
 
 //Formatting function 
 function numberWithCommas(x) {
@@ -87,11 +100,9 @@ form.addEventListener("submit", (e) => {
         //Interest repayment total amount
         const intRepayTotal = Math.floor(intRepay * termMonths * 100) / 100;
         totalAmount.innerHTML = "<span>£</span>" + numberWithCommas(intRepayTotal);
-        document.querySelector("#errorMsg4").style.visibility = ""; 
-
+        document.querySelector("#errorMsg4").style.visibility = "";  
     } else {
         document.querySelector("#errorMsg4").style.visibility = "visible";   
-
     }
 
 })  
