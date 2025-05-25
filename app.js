@@ -4,11 +4,15 @@ const form = document.querySelector('form');
 // Selecting all inputs
 const inputs = document.querySelectorAll('input');
 
+// Radio Button Selects
+    intRadio = document.querySelector("#int");
+    repayRadio = document.querySelector("#repay");
+
 // Radio button selection 
-const mortgageType = document.querySelectorAll('.checkmark');
-console.log(mortgageType)
-const repaymentCheck = mortgageType[0]
-const interestCheck = mortgageType[1]
+// const mortgageType = document.querySelectorAll('.checkmark');
+// console.log(mortgageType)
+// const repaymentCheck = mortgageType[0]
+// const interestCheck = mortgageType[1]
 
 // Repayment Amount
 const monthlyAmount = document.querySelector('.monthlyAmount');
@@ -26,29 +30,45 @@ clearBtn.addEventListener('click', function(e){
     for(i = 0; i < 3; i++){
         inputs[i].value = "";
     }
-    interestCheck.checked = false;
-    document.querySelectorAll(".custom-radio .checkmark")[0].style.position = "static";
-    document.querySelectorAll(".custom-radio .checkmark")[1].style.position = "static";
+    // document.querySelectorAll(".custom-radio .checkmark")[0].style.position = "static";
+    // document.querySelectorAll(".custom-radio .checkmark")[1].style.position = "static";
     console.log("clear fired")
-    repaymentCheck.checked = false;
-    interestCheck.checked = false;
-    document.querySelector("#int").checked = false;
-    document.querySelector("#repay").checked = false;
+    // I don't think this is doing anything.
+    // repaymentCheck.checked = false;
+    // interestCheck.checked = false;
+    intRadio.checked = false;
+    repayRadio.checked = false;
+    document.querySelectorAll(".custom-radio ")[1].style.backgroundColor = '';
+    document.querySelectorAll(".custom-radio ")[1].style.borderColor = '';
+    document.querySelectorAll(".custom-radio ")[0].style.backgroundColor = '';
+    document.querySelectorAll(".custom-radio ")[0].style.borderColor = '';
 })
 
 //Ensure styling is present for radio buttons when clear all button is used
 checkmark = document.querySelector('#typeContainer');
 checkmark.addEventListener('click', function()  {
-    document.querySelectorAll(".custom-radio .checkmark")[0].style.position = "relative";
-    document.querySelectorAll(".custom-radio .checkmark")[1].style.position = "relative";
+
+    // if(intRadio === true)
+    // document.querySelectorAll(".custom-radio .checkmark")[0].style.position = "relative";
+    // document.querySelectorAll(".custom-radio .checkmark")[1].style.position = "relative";
 
 })
 
 //Radio button background colour change on click
 radioBackground = checkmark;
-radioBackground.addEventListener('click', function() {
+radioBackground.addEventListener('click',  () => {
+    if(repayRadio.checked){
     document.querySelectorAll(".custom-radio ")[0].style.backgroundColor = 'hsla(61, 70%, 52%, 0.2)';
     document.querySelectorAll(".custom-radio ")[0].style.borderColor = 'hsl(61, 70%, 52%)';
+    document.querySelectorAll(".custom-radio ")[1].style.backgroundColor = '';
+    document.querySelectorAll(".custom-radio ")[1].style.borderColor = '';
+    } else if(intRadio.checked){
+    document.querySelectorAll(".custom-radio ")[1].style.backgroundColor = 'hsla(61, 70%, 52%, 0.2)';
+    document.querySelectorAll(".custom-radio ")[1].style.borderColor = 'hsl(61, 70%, 52%)';
+    document.querySelectorAll(".custom-radio ")[0].style.backgroundColor = '';
+    document.querySelectorAll(".custom-radio ")[0].style.borderColor = '';
+    }
+
 })
 
 
@@ -108,6 +128,7 @@ form.addEventListener("submit", (e) => {
 })  
 
 
+
 // Displays and removes error messages based on whether something is inputted in form
 form.addEventListener("submit", (e) => {
     if(inputs[0].value === ""){
@@ -139,7 +160,8 @@ form.addEventListener("submit", (e) => {
         document.querySelector(".intLabel").style.color = ""
         document.querySelector("#errorMsg3").style.visibility = "";   
     } 
-    if(inputs[3].checked && inputs[4].checked === "false"){
+    if(!intRadio.checked && !repayRadio.checked){
+        console.log("something is false in radio button")
         document.querySelector("#errorMsg4").style.visibility = "visible";   
     }
 })

@@ -73,8 +73,13 @@ h3 {
     overflow: hidden;
 
 }
-.inputContainer1:hover, .inputContainer2:hover, .inputContainer3:hover {
-    border: 1px black solid;
+
+
+.inputContainer1:hover .durLabel, .inputContainer2:hover .intLabel, .inputContainer3:hover .amountLabel{
+    background-color: var(--Lime);
+}
+.inputContainer1:hover,.inputContainer2:hover , .inputContainer3:hover {
+    border: 1px solid var(--Lime);
 }
 
 #line {
@@ -128,6 +133,8 @@ input {
     align-items: center;
     padding: 1rem;
 }
+
+
 
 #calButton {
     display: flex;
