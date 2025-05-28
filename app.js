@@ -5,14 +5,9 @@ const form = document.querySelector('form');
 const inputs = document.querySelectorAll('input');
 
 // Radio Button Selects
-    intRadio = document.querySelector("#int");
-    repayRadio = document.querySelector("#repay");
+intRadio = document.querySelector("#int");
+repayRadio = document.querySelector("#repay");
 
-// Radio button selection 
-// const mortgageType = document.querySelectorAll('.checkmark');
-// console.log(mortgageType)
-// const repaymentCheck = mortgageType[0]
-// const interestCheck = mortgageType[1]
 
 // Repayment Amount
 const monthlyAmount = document.querySelector('.monthlyAmount');
@@ -30,12 +25,6 @@ clearBtn.addEventListener('click', function(e){
     for(i = 0; i < 3; i++){
         inputs[i].value = "";
     }
-    // document.querySelectorAll(".custom-radio .checkmark")[0].style.position = "static";
-    // document.querySelectorAll(".custom-radio .checkmark")[1].style.position = "static";
-    console.log("clear fired")
-    // I don't think this is doing anything.
-    // repaymentCheck.checked = false;
-    // interestCheck.checked = false;
     intRadio.checked = false;
     repayRadio.checked = false;
     document.querySelectorAll(".custom-radio ")[1].style.backgroundColor = '';
@@ -47,10 +36,6 @@ clearBtn.addEventListener('click', function(e){
 //Ensure styling is present for radio buttons when clear all button is used
 checkmark = document.querySelector('#typeContainer');
 checkmark.addEventListener('click', function()  {
-
-    // if(intRadio === true)
-    // document.querySelectorAll(".custom-radio .checkmark")[0].style.position = "relative";
-    // document.querySelectorAll(".custom-radio .checkmark")[1].style.position = "relative";
 
 })
 
@@ -72,6 +57,7 @@ radioBackground.addEventListener('click',  () => {
 })
 
 
+
 //Formatting function 
 function numberWithCommas(x) {
     return x.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
@@ -87,6 +73,9 @@ inputs[0].addEventListener('input', function() {
     inputs[0].value = parseInt(oldValue).toLocaleString();
     }
 });
+
+// Check inputs are valid on change 
+
 
 // Form submit function
 
@@ -127,6 +116,39 @@ form.addEventListener("submit", (e) => {
 
 })  
 
+//Removes error message when input is changed, before submit button is clicked
+
+form.addEventListener("input", () => {
+    inputs.forEach(element => {
+        console.log(element.value.trim())
+        if(inputs[2].value.trim() !== ""){
+        document.querySelector(".inputContainer2").style.borderColor = ""
+        document.querySelector(".intLabel").style.backgroundColor = ""
+        document.querySelector(".intLabel").style.color = ""
+        document.querySelector("#errorMsg3").style.visibility = "hidden";   
+    } 
+
+        if(inputs[1].value.trim() !== ""){
+        document.querySelector(".inputContainer1").style.borderColor = ""
+        document.querySelector(".durLabel").style.backgroundColor = ""
+        document.querySelector(".durLabel").style.color = ""
+        document.querySelector("#errorMsg2").style.visibility = "hidden";   
+    } 
+        if(inputs[0].value.trim() !== ""){
+        document.querySelector(".inputContainer3").style.borderColor = ""
+        document.querySelector(".amountLabel").style.backgroundColor = ""
+        document.querySelector(".amountLabel").style.color = ""
+        document.querySelector("#errorMsg1").style.visibility = "hidden";   
+            }
+       if(!intRadio.checked && !repayRadio.checked){
+        console.log("something is false in radio button")
+        document.querySelector("#errorMsg4").style.visibility = "visible";   
+    }  else {
+        document.querySelector("#errorMsg4").style.visibility = "hidden";   
+     }
+        } 
+    );
+})
 
 
 // Displays and removes error messages based on whether something is inputted in form
