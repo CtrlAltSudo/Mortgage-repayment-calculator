@@ -62,6 +62,10 @@ cursor: pointer;
 
 h3 {
     display: block;
+    font-size: 1rem;
+    font-weight: 500;
+    color: var(--Slate500);
+    padding-top: 2rem;
 }
 
 .inputContainer1, .inputContainer2, .inputContainer3 {
@@ -83,7 +87,7 @@ h3 {
 }
 
 #line {
-    border: 0.1px solid var(--Slate300);
+    border: 0.1px solid var(--Slate700);
 }
 
 label, h2 {
@@ -132,6 +136,9 @@ input {
     display: flex;
     align-items: center;
     padding: 1rem;
+    font-weight: 700;
+    color: var(--Slate500);
+    font-size: 1rem;
 }
 
 
@@ -188,6 +195,11 @@ button span {
     color: var(--Lime);
     font-size: 3rem;
     font-weight: 500;
+    padding-bottom: 2rem;
+}
+.totalAmount {
+    color: white;
+    font-size: 1.5rem;
 }
 
 #typeContainer {
@@ -195,7 +207,11 @@ button span {
     flex-direction: column;
     justify-content: center;
 }
-/* Disclaimer, I used chatGPT for the creation of the radio buttons, have never needed to customise buttons before :(  */
+#typeContainer span {
+    font-weight: 700;
+    color: var(--Slate900);
+}
+/* Disclaimer, I used help from chatGPT for the creation of the radio buttons  */
 /* Create a custom radio button */
 
 .custom-radio {
@@ -265,6 +281,10 @@ label:focus {
     display: block;
 
 }
+#calculationWrap p {
+    color: var(--Slate300);
+
+}
 #calculationWrap img {
     margin-top: 8.5rem;
     width: auto;
@@ -281,7 +301,7 @@ label:focus {
 
 #resultsContainer h2 {
     text-align: left;
-    font-size: 0.8rem;
+    font-size: 1rem;
 }
 .repaymentContainer {
     width: 100%;
@@ -311,10 +331,32 @@ label:focus {
     }
     #mortgageContainer, #resultsContainer {
         width: 100%;
+        border-radius: 0;
     }
     #calButton {
         width: 100%;
        
     }
+    #calculationWrap {
+    width: 100%;
+    border-radius: 0;
+  } 
+  #calculationWrap p {
+    margin: 0 1rem 0 1rem;
+    padding-bottom: 2rem;
   }
+   #calculationWrap img {
+    margin: 2rem 0 0 0;
+   }
+   .topHeadButton {
+    flex-direction: column-reverse;
+   }
+   .topHeadButton h1 {
+    margin-bottom: 1rem;
+   }
+   #clearBtn {
+    margin-bottom: 2rem;
+   }
+
+  } 
 

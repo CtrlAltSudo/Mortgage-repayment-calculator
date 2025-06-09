@@ -21,6 +21,9 @@ const calButton = document.getElementById('calButton');
 //Selects checkmark
 const clearBtn = document.querySelector('#clearBtn');
 clearBtn.addEventListener('click', function(e){
+    document.querySelector('#calculationWrap').style.display = "flex"
+   //Hide initial calculation page 
+    document.querySelector('#resultsContainer').style.display = "none"
     console.log("clear button fired, inputs cleared")
     for(i = 0; i < 3; i++){
         inputs[i].value = "";
@@ -92,22 +95,25 @@ form.addEventListener("submit", (e) => {
         //Repayment Calculate 
     if(document.querySelector("#repay").checked){
     //Repayment Calculation
-    const repayCal = Math.floor((mortVal - mortVal / 3) * intDeci / 12 + mortVal / termMonths);
+    const repayCal = Math.round((mortVal - mortVal / 3) * intDeci / 12 + mortVal / termMonths * 100) / 100;
+    console.log(repayCal)
     monthlyAmount.innerHTML = "<span>£</span>" + numberWithCommas(repayCal)
     document.querySelector("#errorMsg4").style.visibility = "";  
     //Total term calculation
-    const totalRepay = Math.floor(repayCal * 12) * term.value;
+    const totalRepay = (Math.round(repayCal * 12 * 100 ) / 100 * term.value).toFixed(2);
     totalAmount.innerHTML = "<span>£</span>" +  numberWithCommas(totalRepay);
          //Hide initial calculation page 
         document.querySelector('#calculationWrap').style.display = "none"
-         //Hide initial calculation page 
         document.querySelector('#resultsContainer').style.display = "flex"
     } else if(document.querySelector("#int").checked){
+         //Hide initial calculation page 
+        document.querySelector('#calculationWrap').style.display = "none"
+        document.querySelector('#resultsContainer').style.display = "flex"
         //Interest repayment monthly total 
-        const intRepay = Math.floor(mortVal * intDeci / 12);
+        const intRepay = (Math.round(mortVal * intDeci / 12) * 100 / 100).toFixed(2);
         monthlyAmount.innerHTML = "<span>£</span>" + numberWithCommas(intRepay);
         //Interest repayment total amount
-        const intRepayTotal = Math.floor(intRepay * termMonths * 100) / 100;
+        const intRepayTotal = (Math.round(intRepay * termMonths * 100) / 100).toFixed(2);
         totalAmount.innerHTML = "<span>£</span>" + numberWithCommas(intRepayTotal);
         document.querySelector("#errorMsg4").style.visibility = "";  
     } else {
