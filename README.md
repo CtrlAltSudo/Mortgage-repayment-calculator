@@ -1,6 +1,6 @@
 <h1 align="center">Mortgage-repayment-calculator</h1>
-<p align="center"> <a align="center" href="https://github.com/CtrlAltSudo/Mortgage-repayment-calculator">Live Demo</a><p>
-<p align="center"> <a align="center" href="https://www.frontendmentor.io/solutions/fmrecipepage-ZQ1ELK5DKU">Solution Page</a><p>
+<p align="center"> <a align="center" href="https://ctrlaltsudo.github.io/Mortgage-repayment-calculator/">Live Demo</a><p>
+<p align="center"> <a align="center" href="https://www.frontendmentor.io/solutions/mortgage-repayment-calculator-3ioNDlN8wS">Solution Page</a><p>
 <h2 align="center">Project Screenshot<h2>
 <p align="center">
   <img src="./images/ProjectScreenShot.png" alt="project screen shot"></img>
